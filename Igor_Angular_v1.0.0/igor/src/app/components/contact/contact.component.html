@@ -1,0 +1,119 @@
+<section class="bg-half-100 contact-section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-6">
+          <div class="contact-left">
+            <div class="title-section mb-60">
+              <h2 class="title-sub-heading mb-20">Contact</h2>
+              <h3 class="title-main-heading mb-0">Get in Touch</h3>
+            </div>
+
+            <div class="contact-grid">
+              <div class="contact-type d-flex gap-0 column-gap-4 mt-5 align-items-center">
+                <div class="contact-icon d-flex align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-phone">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="contact-name mb-1">Phone</h4>
+                  <p class="mb-0"><a href="tel:02251398203" class="text-muted">+(02+ 251 398 203)</a></p>
+                </div>
+              </div>
+              <div class="contact-type d-flex gap-0 column-gap-4 mt-5 align-items-center">
+                <div class="contact-icon d-flex align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-send">
+                    <path d="m22 2-7 20-4-9-9-4Z" />
+                    <path d="M22 2 11 13" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="contact-name mb-1">Email</h4>
+                  <a href="mailto:info@example.com" class="mb-0 text-muted">info&#64;example.com</a>
+                </div>
+              </div>
+              <div class="contact-type d-flex gap-0 column-gap-4 mt-5 align-items-center">
+                <div class="contact-icon d-flex align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-map-pin">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="contact-name mb-1">Address</h4>
+                  <p class="mb-0 text-muted">Graaf Florisstraat 22A, 3021 CH <br>Burline, Germany</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xxl-7 col-xl-7 col-lg-6 col-md-6">
+          <div class="contact-right mt-md-0 mt-3">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label class="form-label">Name </label>
+                      <input type="text" class="form-control rounded" formControlName="name" placeholder="Your Name">
+                      <div *ngIf="submitted && contactForm.controls['name'].errors" class="text-danger fs-6">
+                        <div *ngIf="contactForm.controls['name'].errors['required']" class="fs-6">Name is required.</div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label class="form-label">Email address</label>
+                      <input type="email" class="form-control rounded" formControlName="email" placeholder="Your Email Address">
+                      <div *ngIf="submitted && contactForm.controls['email'].errors" class="text-danger">
+                        <div *ngIf="contactForm.controls['email'].errors['required']">Email is required.</div>
+                        <div *ngIf="contactForm.controls['email'].errors['email']">Enter a valid email address.</div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-lg-12">
+                    <div class="mb-3">
+                      <label class="form-label">Subject</label>
+                      <input type="text" class="form-control rounded" formControlName="subject" placeholder="Your Subject">
+                      <div *ngIf="submitted && contactForm.controls['subject'].errors" class="text-danger fs-6">
+                        <div *ngIf="contactForm.controls['subject'].errors['required']">Subject is required.</div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="col-lg-12">
+                    <div class="">
+                      <label class="form-label">Message</label>
+                      <textarea class="form-control rounded" formControlName="message" placeholder="Your Message" rows="5"></textarea>
+                      <div *ngIf="submitted && contactForm.controls['message'].errors" class="text-danger">
+                        <div *ngIf="contactForm.controls['message'].errors['required']">Message is required.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="row">
+                  <div class="col-12">
+                    <div class="">
+                      <button type="submit" class="btn btn-primary rounded-pill mt-5">Send Message</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End container -->
+  </section>

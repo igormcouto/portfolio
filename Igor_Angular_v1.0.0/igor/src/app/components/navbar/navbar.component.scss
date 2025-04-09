@@ -1,0 +1,68 @@
+/* Dropdown Menu deve aparecer abaixo do navbar */
+.dropdown-menu {
+  position: absolute;
+  top: 50px; /* Ajuste para ficar abaixo do navbar */
+  left: 0;
+  width: 100%;
+  background: white;
+  overflow: hidden;
+  z-index: 999; /* Garante que apareça acima de outros elementos */
+  display: block; /* Garante que seja visível */
+  border-radius: 0px;
+  border-color: white;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Ajustando lista */
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 5px;
+  text-align: center;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: gray;
+  display: block;
+  font-size: 16px;
+}
+
+/* Animação para abrir suavemente */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação para fechar suavemente */
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Quando o menu está aberto */
+.dropdown-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  animation: slideDown 0.3s ease-out;
+}

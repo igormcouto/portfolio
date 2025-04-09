@@ -1,0 +1,87 @@
+<app-navbar />
+
+<!-- Hero Start -->
+<section class="bg-half-170 d-table w-100" style="background: url('assets/images/13.jpg')center center;">
+    <div class="bg-overlay bg-overlay-white"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <h4 class="typed-heading text-white">Portfolio Standard</h4>
+                <div class="page-next">
+                    <nav aria-label="breadcrumb" class="d-inline-block">
+                        <ul class="breadcrumb rounded mb-0 mt-3">
+                            <li class="breadcrumb-item text-white"><a href="index.html" class="text-white">Home</a></li>
+                            <span class="px-3 text-white">|</span>
+                            <li class="breadcrumb-item text-primary" aria-current="page">Portfolio</li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- <div class="page-next-level">
+                        
+                    </div> -->
+            </div> <!--end col-->
+        </div><!--end row-->
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<div class="position-relative">
+    <div class="shape overflow-hidden text-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!-- end hero -->
+<section class="bg-half-100 work-section" id="work">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xxl-12">
+          <div class="filters-group mb-5">
+            <ul class="container-filter list-inline filter-options text-center">
+              <li class="list-inline-item categories" 
+                  [class.active]="selectedGroup === 'all'" 
+                  (click)="filterGroup('all')">All</li>
+              <li class="list-inline-item categories" 
+                  [class.active]="selectedGroup === 'branding'" 
+                  (click)="filterGroup('branding')">Branding</li>
+              <li class="list-inline-item categories" 
+                  [class.active]="selectedGroup === 'designing'" 
+                  (click)="filterGroup('designing')">Designing</li>
+              <li class="list-inline-item categories" 
+                  [class.active]="selectedGroup === 'photography'" 
+                  (click)="filterGroup('photography')">Photography</li>
+              <li class="list-inline-item categories" 
+                  [class.active]="selectedGroup === 'development'" 
+                  (click)="filterGroup('development')">Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <div id="gallery-wrapper" class="row projects-wrapper gy-4">
+        @for (item of filteredItems; track $index) {
+        <div class="col-lg-4 col-md-6 col-12 picture-item">
+          <div class="work-container position-relative d-block overflow-hidden rounded">
+            <div class="card-body p-0">
+              <img [src]="item.imgSrc" class="img-fluid" [alt]="item.altText">
+              <div class="overlay-work bg-dark"></div>
+              <div class="content">
+                <h5 class="mb-3"><a class='content-title' href='javascript:void(0)'>{{ item.title }}</a></h5>
+                <h6 class="text-light tag mb-0">{{ item.tag }}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+    }
+      </div>
+  
+      <div class="col-12">
+        <div class="text-center">
+          <a href="javascript:void(0);!" class="btn btn-primary rounded-pill mt-5"> See more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<app-footer />
