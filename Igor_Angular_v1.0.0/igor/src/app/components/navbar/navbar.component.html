@@ -1,26 +1,14 @@
 <nav class="navbar navbar-expand-lg fixed-top sticky" [ngClass]="{ 'nav-sticky': isSticky ,'nav-light': navbarColor }"
   id="navbar">
   <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <span class="logo-light-mode">
-        @if (navbarColor) {
-        <img src="assets/images/logo-dark.png" class="l-light" alt="">
-        <img src="assets/images/logo-light.png" class="l-dark" alt="">
-        }@else{
-        <img src="assets/images/logo-light.png" class="l-light" alt="">
-        <img src="assets/images/logo-dark.png" class="l-dark" alt="">
-        }
-      </span>
-      <img src="assets/images/logo-light.png" class="logo-dark-mode" alt="">
-    </a>
     <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navlist">
+    <div class="collapse navbar-collapse" style="justify-content: center;" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0" id="navbar-navlist">
         <li class="nav-item" [ngClass]="{
           active: activeLink === 'home'
         }" (click)="setActiveLink('home')">
@@ -29,19 +17,19 @@
         <li class="nav-item" [ngClass]="{
           active: activeLink === 'about'
         }" (click)="setActiveLink('about')">
-          <a class="nav-link" [ngxScrollTo]="'#about'" href="javascript:void(0);about">About Us</a>
+          <a class="nav-link" [ngxScrollTo]="'#about'" href="javascript:void(0);about">Sobre</a>
         </li>
         <li class="nav-item" [ngClass]="{
           active: activeLink === 'work'
         }" (click)="setActiveLink('work')">
-          <a class="nav-link" [ngxScrollTo]="'#work'" href="javascript:void(0);work">Work</a>
+          <a class="nav-link" [ngxScrollTo]="'#work'" href="javascript:void(0);work">Trabalhos</a>
         </li>
         <li class="nav-item" [ngClass]="{
           active: activeLink === 'services'
         }" (click)="setActiveLink('services')">
-          <a class="nav-link" [ngxScrollTo]="'#services'" href="javascript:void(0);services">Services</a>
+          <a class="nav-link" [ngxScrollTo]="'#services'" href="javascript:void(0);services">Serviços</a>
         </li>
-        <li class="nav-item" [ngClass]="{
+        <!-- <li class="nav-item" [ngClass]="{
           active: activeLink === 'testimonial'
         }" (click)="setActiveLink('testimonial')">
           <a class="nav-link" [ngxScrollTo]="'#testimonial'" href="javascript:void(0);testimonial">Testimonial</a>
@@ -50,11 +38,11 @@
           active: activeLink === 'blog'
         }" (click)="setActiveLink('blog')">
           <a class="nav-link" [ngxScrollTo]="'#blog'" href="javascript:void(0);blog">Blog</a>
-        </li>
+        </li> -->
         <li class="nav-item" [ngClass]="{
           active: activeLink === 'contact'
         }" (click)="setActiveLink('contact')">
-          <a class="nav-link" [ngxScrollTo]="'#contact'" href="javascript:void(0);contact">Contact</a>
+          <a class="nav-link" [ngxScrollTo]="'#contact'" href="javascript:void(0);contact">Contato</a>
         </li>
       </ul>
     </div>
