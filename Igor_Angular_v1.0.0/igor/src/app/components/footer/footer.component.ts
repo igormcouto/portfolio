@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   year = new Date().getFullYear()
+
+  openLink(link: string): void {
+    window.open(link, '_blank');
+  }
 }
