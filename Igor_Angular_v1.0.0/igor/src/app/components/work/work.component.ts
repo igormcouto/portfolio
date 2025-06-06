@@ -12,7 +12,7 @@ export class WorkComponent {
     {
       imgSrc: 'assets/images/portfolio/egesp.png',
       altText: 'work-image',
-      link: 'portfolio',
+      link: 'https://www4.fazenda.sp.gov.br/SistemaEgesp/inscricao-aberta',
       title: 'EGESP',
       tag: 'Escola do Governo',
       group: 'development'
