@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href=/portfolio/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ghpages": "angular-cli-ghpages --dir=dist/portfolio",
+    "deploy": "npm run build && npm run ghpages"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@nicky-lenaers/ngx-scroll-to": "^14.0.0",
     "@popperjs/core": "^2.11.8",
+    "angular-cli-ghpages": "^2.0.3",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
     "swiper": "^11.1.15",
