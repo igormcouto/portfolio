@@ -33,4 +33,8 @@ export class WorkComponent {
       this.filteredItems = this.items.filter(item => item.group === group);
     }
   }
+
+  openLink(link: string): void {
+    window.open(link, '_blank');
+  }
 }

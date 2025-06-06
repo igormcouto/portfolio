@@ -31,7 +31,7 @@
                         <img [src]="item.imgSrc" class="img-fluid" [alt]="item.altText">
                         <div class="overlay-work bg-dark"></div>
                         <div class="content">
-                            <h5 class="mb-3"><a class='content-title' [href]="item.link">{{ item.title }}</a></h5>
+                            <h5 class="mb-3"><a class='content-title' style="cursor: pointer;" (click)="openLink(item.link)">{{ item.title }}</a></h5>
                             <h6 class="text-light tag mb-0">{{ item.tag }}</h6>
                         </div>
                     </div>
